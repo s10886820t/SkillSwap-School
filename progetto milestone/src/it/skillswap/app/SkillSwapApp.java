@@ -12,7 +12,7 @@ import it.skillswap.service.ExchangeService;
 import it.skillswap.service.MatchingService;
 import it.skillswap.service.ReviewService;
 import it.skillswap.service.SkillSwapService;
-import it.skillswap.storage.InMemoryStorage;
+import it.skillswap.storage.FileStorage;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class SkillSwapApp {
     private static final String LINE = "============================================================";
 
     public static void main(String[] args) {
-        SkillSwapService service = new SkillSwapService(new InMemoryStorage());
+        SkillSwapService service = new SkillSwapService(new FileStorage());
         service.seedSkills();
         ReviewService reviewService = new ReviewService(service.getStorage(), service.getState());
         ConsoleReportPrinter printer = new ConsoleReportPrinter();
