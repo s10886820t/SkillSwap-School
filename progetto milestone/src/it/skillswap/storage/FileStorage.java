@@ -45,7 +45,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";");
+                String[] parts = line.split(";" , -1);
 
                 Student student = new Student(
                         parts[0],
@@ -77,7 +77,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";");
+                String[] parts = line.split(";" , -1);
 
                 Skill skill = new Skill(
                         parts[0],
@@ -106,7 +106,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";");
+                String[] parts = line.split(";" , -1);
 
                 Student student = state.getStudents().get(parts[1]);
                 Skill skill = state.getSkills().get(parts[2]);
@@ -175,7 +175,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";");
+                String[] parts = line.split(";" , -1);
 
                 Offer offer = state.getOffers().get(parts[1]);
                 Request request = state.getRequests().get(parts[2]);
@@ -216,7 +216,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";");
+                String[] parts = line.split(";" , -1);
 
                 Exchange exchange = state.getExchanges().get(parts[1]);
                 Student reviewer = state.getStudents().get(parts[2]);
