@@ -1,6 +1,7 @@
 package it.skillswap.domain;
 
 public class MatchResult {
+
     private final Student matchedStudent;
     private final Offer offer;
     private final Request request;
@@ -47,10 +48,10 @@ public class MatchResult {
 
     @Override
     public String toString() {
-        return "Match con " + matchedStudent.getName() +
-                " | offerId=" + offer.getId() +
-                " | requestId=" + request.getId() +
-                " | score=" + score +
-                " | reason=" + reason;
+        return "Match con " + matchedStudent.getName()
+                + " | offerId=" + offer.getId()
+                + " | requestId=" + request.getId()
+                + " | score=" + score
+                + " | reason=" + reason;
     }
 }

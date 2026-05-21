@@ -1,6 +1,7 @@
 package it.skillswap.domain;
 
 public class Request {
+
     private final String id;
     private final Student student;
     private final Skill skill;
@@ -50,9 +51,9 @@ public class Request {
 
     @Override
     public String toString() {
-        return id + " - student=" + student.getName() +
-                ", skill=" + skill.getName() +
-                ", minLevel=" + minLevel +
-                ", note=" + note;
+        return id + " - student=" + student.getName()
+                + ", skill=" + skill.getName()
+                + ", minLevel=" + minLevel
+                + ", note=" + note;
     }
 }

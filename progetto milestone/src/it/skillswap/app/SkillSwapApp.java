@@ -37,31 +37,50 @@ public class SkillSwapApp {
 
             try {
                 switch (choice) {
-                    case "1" -> createStudent(sc, service);
-                    case "2" -> listStudents(service);
-                    case "3" -> listSkills(service);
-                    case "4" -> addOffer(sc, service);
-                    case "5" -> addRequest(sc, service);
-                    case "6" -> listOffers(service);
-                    case "7" -> listRequests(service);
-                    case "8" -> listStudentData(sc, service, printer);
-                    case "9" -> findOneWayMatches(sc, service, printer);
-                    case "10" -> findSwapMatches(sc, service, printer);
-                    case "11" -> proposeExchange(sc, service, printer);
-                    case "12" -> acceptExchange(sc, service, printer);
-                    case "13" -> completeExchange(sc, service, printer);
-                    case "14" -> cancelExchange(sc, service, printer);
-                    case "15" -> listExchanges(service, printer);
-                    case "16" -> addReview(sc, reviewService);
-                    case "17" -> listReviews(reviewService);
-                    case "18" -> showLeaderboard(service, printer);
+                    case "1" ->
+                        createStudent(sc, service);
+                    case "2" ->
+                        listStudents(service);
+                    case "3" ->
+                        listSkills(service);
+                    case "4" ->
+                        addOffer(sc, service);
+                    case "5" ->
+                        addRequest(sc, service);
+                    case "6" ->
+                        listOffers(service);
+                    case "7" ->
+                        listRequests(service);
+                    case "8" ->
+                        listStudentData(sc, service, printer);
+                    case "9" ->
+                        findOneWayMatches(sc, service, printer);
+                    case "10" ->
+                        findSwapMatches(sc, service, printer);
+                    case "11" ->
+                        proposeExchange(sc, service, printer);
+                    case "12" ->
+                        acceptExchange(sc, service, printer);
+                    case "13" ->
+                        completeExchange(sc, service, printer);
+                    case "14" ->
+                        cancelExchange(sc, service, printer);
+                    case "15" ->
+                        listExchanges(service, printer);
+                    case "16" ->
+                        addReview(sc, reviewService);
+                    case "17" ->
+                        listReviews(reviewService);
+                    case "18" ->
+                        showLeaderboard(service, printer);
                     case "0" -> {
                         System.out.println("\n" + LINE);
                         System.out.println(" Chiusura SkillSwap School...");
                         System.out.println(LINE);
                         running = false;
                     }
-                    default -> System.out.println("\nScelta non valida. Riprova.\n");
+                    default ->
+                        System.out.println("\nScelta non valida. Riprova.\n");
                 }
             } catch (Exception e) {
                 System.out.println("\n[ERRORE] " + e.getMessage() + "\n");

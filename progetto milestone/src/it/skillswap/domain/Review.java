@@ -3,6 +3,7 @@ package it.skillswap.domain;
 import java.time.LocalDateTime;
 
 public class Review {
+
     private final String id;
     private final Exchange exchange;
     private final Student reviewer;

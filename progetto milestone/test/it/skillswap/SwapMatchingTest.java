@@ -8,7 +8,7 @@ import it.skillswap.storage.InMemoryStorage;
 
 import java.util.List;
 
-public class MatchingServiceTest {
+public class SwapMatchingTest {
 
     public static void main(String[] args) {
 
@@ -20,22 +20,30 @@ public class MatchingServiceTest {
         service.registerStudent("Anna", "4A", "anna@test.it");
         service.registerStudent("Luca", "4A", "luca@test.it");
 
-        service.addOffer("S2", "K1",
+        service.addOffer("S1", "K2",
                 SkillLevel.ADVANCED,
-                "C avanzato");
+                "Matematica");
 
         service.addRequest("S1", "K1",
                 SkillLevel.BEGINNER,
-                "Aiuto");
+                "C");
+
+        service.addOffer("S2", "K1",
+                SkillLevel.ADVANCED,
+                "Programmazione");
+
+        service.addRequest("S2", "K2",
+                SkillLevel.BEGINNER,
+                "Matematica");
 
         MatchingService matchingService =
                 new MatchingService(service.getState());
 
         List<MatchResult> matches =
-                matchingService.findOneWayMatches("S1");
+                matchingService.findSwapMatches("S1");
 
         assert matches.size() == 1;
 
-        System.out.println("MatchingServiceTest passed!");
+        System.out.println("SwapMatchingTest passed!");
     }
 }

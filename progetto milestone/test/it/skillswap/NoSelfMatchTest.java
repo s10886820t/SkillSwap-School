@@ -1,14 +1,11 @@
 package it.skillswap;
 
-import it.skillswap.domain.MatchResult;
 import it.skillswap.domain.SkillLevel;
 import it.skillswap.service.MatchingService;
 import it.skillswap.service.SkillSwapService;
 import it.skillswap.storage.InMemoryStorage;
 
-import java.util.List;
-
-public class MatchingServiceTest {
+public class NoSelfMatchTest {
 
     public static void main(String[] args) {
 
@@ -18,11 +15,10 @@ public class MatchingServiceTest {
         service.seedSkills();
 
         service.registerStudent("Anna", "4A", "anna@test.it");
-        service.registerStudent("Luca", "4A", "luca@test.it");
 
-        service.addOffer("S2", "K1",
+        service.addOffer("S1", "K1",
                 SkillLevel.ADVANCED,
-                "C avanzato");
+                "C");
 
         service.addRequest("S1", "K1",
                 SkillLevel.BEGINNER,
@@ -31,11 +27,10 @@ public class MatchingServiceTest {
         MatchingService matchingService =
                 new MatchingService(service.getState());
 
-        List<MatchResult> matches =
-                matchingService.findOneWayMatches("S1");
+        assert matchingService
+                .findOneWayMatches("S1")
+                .isEmpty();
 
-        assert matches.size() == 1;
-
-        System.out.println("MatchingServiceTest passed!");
+        System.out.println("NoSelfMatchTest passed!");
     }
 }

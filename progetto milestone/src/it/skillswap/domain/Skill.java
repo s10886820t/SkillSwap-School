@@ -1,6 +1,7 @@
 package it.skillswap.domain;
 
 public class Skill {
+
     private final String id;
     private final String name;
     private final SkillCategory category;

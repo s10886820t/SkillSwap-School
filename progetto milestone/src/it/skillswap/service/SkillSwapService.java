@@ -9,11 +9,11 @@ import it.skillswap.domain.SkillLevel;
 import it.skillswap.domain.Student;
 import it.skillswap.storage.SkillSwapState;
 import it.skillswap.storage.Storage;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class SkillSwapService {
+
     private final Storage storage;
     private final SkillSwapState state;
     private final IdGenerator idGenerator;

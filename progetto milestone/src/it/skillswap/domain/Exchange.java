@@ -3,6 +3,7 @@ package it.skillswap.domain;
 import java.time.LocalDateTime;
 
 public class Exchange {
+
     private final String id;
     private final Offer offer;
     private final Request request;
@@ -94,11 +95,11 @@ public class Exchange {
 
     @Override
     public String toString() {
-        return id +
-                " - offer=" + offer.getId() +
-                ", request=" + request.getId() +
-                ", status=" + status +
-                ", createdAt=" + createdAt +
-                ", closedAt=" + closedAt;
+        return id
+                + " - offer=" + offer.getId()
+                + ", request=" + request.getId()
+                + ", status=" + status
+                + ", createdAt=" + createdAt
+                + ", closedAt=" + closedAt;
     }
 }

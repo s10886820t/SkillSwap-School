@@ -45,7 +45,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";" , -1);
+                String[] parts = line.split(";", -1);
 
                 Student student = new Student(
                         parts[0],
@@ -77,7 +77,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";" , -1);
+                String[] parts = line.split(";", -1);
 
                 Skill skill = new Skill(
                         parts[0],
@@ -106,7 +106,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";" , -1);
+                String[] parts = line.split(";", -1);
 
                 Student student = state.getStudents().get(parts[1]);
                 Skill skill = state.getSkills().get(parts[2]);
@@ -175,7 +175,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";" , -1);
+                String[] parts = line.split(";", -1);
 
                 Offer offer = state.getOffers().get(parts[1]);
                 Request request = state.getRequests().get(parts[2]);
@@ -216,7 +216,7 @@ public class FileStorage implements Storage {
 
             while ((line = br.readLine()) != null) {
 
-                String[] parts = line.split(";" , -1);
+                String[] parts = line.split(";", -1);
 
                 Exchange exchange = state.getExchanges().get(parts[1]);
                 Student reviewer = state.getStudents().get(parts[2]);
@@ -242,64 +242,64 @@ public class FileStorage implements Storage {
 
     private void saveStudents(SkillSwapState state) {
         writeFile("students.csv", state.getStudents().values().stream()
-                .map(s -> s.getId() + ";" +
-                        s.getName() + ";" +
-                        s.getStudentClass() + ";" +
-                        s.getEmail() + ";" +
-                        s.getRatingAvg() + ";" +
-                        s.getRatingCount())
+                .map(s -> s.getId() + ";"
+                + s.getName() + ";"
+                + s.getStudentClass() + ";"
+                + s.getEmail() + ";"
+                + s.getRatingAvg() + ";"
+                + s.getRatingCount())
                 .toList());
     }
 
     private void saveSkills(SkillSwapState state) {
         writeFile("skills.csv", state.getSkills().values().stream()
-                .map(s -> s.getId() + ";" +
-                        s.getName() + ";" +
-                        s.getCategory())
+                .map(s -> s.getId() + ";"
+                + s.getName() + ";"
+                + s.getCategory())
                 .toList());
     }
 
     private void saveOffers(SkillSwapState state) {
         writeFile("offers.csv", state.getOffers().values().stream()
-                .map(o -> o.getId() + ";" +
-                        o.getStudent().getId() + ";" +
-                        o.getSkill().getId() + ";" +
-                        o.getLevel() + ";" +
-                        o.getNote() + ";" +
-                        o.isActive())
+                .map(o -> o.getId() + ";"
+                + o.getStudent().getId() + ";"
+                + o.getSkill().getId() + ";"
+                + o.getLevel() + ";"
+                + o.getNote() + ";"
+                + o.isActive())
                 .toList());
     }
 
     private void saveRequests(SkillSwapState state) {
         writeFile("requests.csv", state.getRequests().values().stream()
-                .map(r -> r.getId() + ";" +
-                        r.getStudent().getId() + ";" +
-                        r.getSkill().getId() + ";" +
-                        r.getMinLevel() + ";" +
-                        r.getNote())
+                .map(r -> r.getId() + ";"
+                + r.getStudent().getId() + ";"
+                + r.getSkill().getId() + ";"
+                + r.getMinLevel() + ";"
+                + r.getNote())
                 .toList());
     }
 
     private void saveExchanges(SkillSwapState state) {
         writeFile("exchanges.csv", state.getExchanges().values().stream()
-                .map(e -> e.getId() + ";" +
-                        e.getOffer().getId() + ";" +
-                        e.getRequest().getId() + ";" +
-                        e.getStatus() + ";" +
-                        e.getCreatedAt() + ";" +
-                        (e.getClosedAt() == null ? "" : e.getClosedAt()))
+                .map(e -> e.getId() + ";"
+                + e.getOffer().getId() + ";"
+                + e.getRequest().getId() + ";"
+                + e.getStatus() + ";"
+                + e.getCreatedAt() + ";"
+                + (e.getClosedAt() == null ? "" : e.getClosedAt()))
                 .toList());
     }
 
     private void saveReviews(SkillSwapState state) {
         writeFile("reviews.csv", state.getReviews().values().stream()
-                .map(r -> r.getId() + ";" +
-                        r.getExchange().getId() + ";" +
-                        r.getReviewer().getId() + ";" +
-                        r.getReviewee().getId() + ";" +
-                        r.getStars() + ";" +
-                        r.getComment() + ";" +
-                        r.getCreatedAt())
+                .map(r -> r.getId() + ";"
+                + r.getExchange().getId() + ";"
+                + r.getReviewer().getId() + ";"
+                + r.getReviewee().getId() + ";"
+                + r.getStars() + ";"
+                + r.getComment() + ";"
+                + r.getCreatedAt())
                 .toList());
     }
 

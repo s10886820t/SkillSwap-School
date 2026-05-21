@@ -6,11 +6,11 @@ import it.skillswap.domain.Request;
 import it.skillswap.domain.Review;
 import it.skillswap.domain.Skill;
 import it.skillswap.domain.Student;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class SkillSwapState {
+
     private final Map<String, Student> students = new LinkedHashMap<>();
     private final Map<String, Skill> skills = new LinkedHashMap<>();
     private final Map<String, Offer> offers = new LinkedHashMap<>();
